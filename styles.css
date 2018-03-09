@@ -1,0 +1,25 @@
+body {
+	background: Black;
+	color: White;
+}
+
+div {
+	margin-top: 1.5em;
+}
+
+table {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+input[type="text"] {
+    width: 50em;
+}
+
+#label {
+	width: 22em;
+}
+
+button {
+    margin-left: .5em;
+}

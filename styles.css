@@ -12,12 +12,26 @@ table {
 	margin-bottom: 0.5em;
 }
 
-input[type="text"] {
-    width: 50em;
+
+img {
+	max-width:9em;
+}
+
+#dialogue-table input[type="text"]{
+    width: 39em;
+}
+
+textarea {
+	width: 60em;
+	height: 30em;
 }
 
 #label {
-	width: 22em;
+	width: 25em;
+}
+
+#prompt {
+	width: 53em;
 }
 
 button {

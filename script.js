@@ -60,7 +60,7 @@ function process()
 	var finalText = "" +
 		"init 5 python:" + tab(1) + "addEvent(" + "Event(" + 
 		argumentText + ")" + ")" + tab(0) +
-		tab(0) + "label " + label + ":" + linesText + tab(1) + "return";
+		tab(0) + "label " + label + ":" + linesText + tab(1) + "return\n";
 	
 	document.getElementById("formatted-text").innerHTML = finalText;
 }

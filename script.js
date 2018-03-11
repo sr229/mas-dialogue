@@ -175,7 +175,7 @@ function makePictureTable(tableType, numPicsInRow, numPics)
 	
 	return table;
 }
-//
+
 function makeImageButton(path, flavor, tableType, picIndex)
 {
 	var pic = document.createElement("img");

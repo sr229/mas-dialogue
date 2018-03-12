@@ -5,11 +5,17 @@ var faceHash = {
 	7:"h", 8:"i", 9:"j", 10:"k", 11:"l", 12:"m", 
 	13:"n", 14:"o", 15:"p", 16:"q", 17:"r" 
 };
+var availableCategories = [ 
+	'Advice', 'Club', 'Club Members', 'Ddlc', 'Games', 'Life', 
+	'Literature', 'Media', 'Misc', 'Mod', 'Monika', 'Philosophy', 
+	'Psychology', 'Romance', 'School', 'Society', 'Technology', 
+	'Trivia', 'Writing', 'You' 
+];
 
 function process()
 {
 	var label = "monika_" + 
-		clean(document.getElementById("label").value);
+		clean(document.getElementById("label").value, false);
 		
 	var labelText = "\"" + label + "\",";
 	
@@ -20,8 +26,9 @@ function process()
 	var categoryText = "";
 	var categoryTable = document.getElementById("category-table");
 	for (var i = 0; i < categoryTable.rows.length; i++) {
-		var raw = categoryTable.rows[i].cells[0].childNodes[0].value;
-		categoryText = categoryText + "\"" + clean(raw) + "\",";
+		var raw = categoryTable.rows[i].cells[0].childNodes[0];
+		var choice = raw.options[raw.selectedIndex].value;
+		categoryText = categoryText + "\'" + choice + "\',";
 	}
 	categoryText = categoryText.slice(0, -1);
 	categoryText = "category=[" + categoryText + "],";
@@ -87,11 +94,15 @@ function addRow(table, cells)
 
 function addCategory() {
 	var cells = [];
-    
-    var textBox = document.createElement("input");
-    textBox.setAttribute("type", "text");
-    textBox.setAttribute("placeholder", "Decorations");
-    cells.push(textBox);
+    var dropBox = document.createElement("select");
+
+    availableCategories.forEach(function(element) {
+		var option = document.createElement("option");
+		option.setAttribute("value", clean(element, true));
+		option.innerHTML = element;
+		dropBox.appendChild(option);
+	});
+    cells.push(dropBox);
     
     var cancelButton = document.createElement("button");
     cancelButton.innerHTML = "X";
@@ -221,9 +232,10 @@ function getAncestor(item, n)
 	return item;
 }
 
-function clean(str)
+function clean(str, space)
 {
-	str = str.replace(/[^\w\s]|_/g, "").replace(/ /g, "_");
+	str = str.replace(/[^\w\s]|_/g, "")
+	str = space ? str : str.replace(/ /g, "_");
 	return str.toLowerCase();
 }
 

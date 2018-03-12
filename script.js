@@ -45,7 +45,7 @@ function process()
 	
 	var argumentText = (
 		"persistent.event_database," + labelText + 
-		promptText + categoryText + randomText + poolText
+		categoryText + promptText + randomText + poolText
 		).slice(0, -1);
 	
 	var lines = [];

@@ -17,7 +17,7 @@ function process()
 	var label = "monika_" + 
 		clean(document.getElementById("label").value, false);
 		
-	var labelText = "\"" + label + "\",";
+	var labelText = "eventlabel=\"" + label + "\",";
 	
 	var promptText = "prompt=\"" + 
 		document.getElementById("prompt").value + 

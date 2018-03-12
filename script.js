@@ -1,5 +1,5 @@
 var word = { 1:"pose", 2:"face" };
-var poseHash = { 0:"1", 1:"2", 2:"3", 3:"4"};
+var poseHash = { 0:"1", 1:"2", 2:"3", 3:"4", 4:"5"};
 var faceHash = { 
 	0:"a", 1:"b", 2:"c", 3:"d", 4:"e", 5:"f", 6:"g", 
 	7:"h", 8:"i", 9:"j", 10:"k", 11:"l", 12:"m", 
@@ -106,7 +106,7 @@ function addDialogue()
 	var container = document.getElementById("dialogue-table");
 	var innerTable = document.createElement("table");
 	
-	var numPosePicsInRow = 2;
+	var numPosePicsInRow = 3;
 	var numFacePicsInRow = 3;
 	
 	addRow(innerTable, makeFirstLine());

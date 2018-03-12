@@ -18,10 +18,6 @@ function process()
 		clean(document.getElementById("label").value, false);
 		
 	var labelText = "eventlabel=\"" + label + "\",";
-	
-	var promptText = "prompt=\"" + 
-		document.getElementById("prompt").value + 
-		"\",";
 		
 	var categoryText = "";
 	var categoryTable = document.getElementById("category-table");
@@ -32,6 +28,10 @@ function process()
 	}
 	categoryText = categoryText.slice(0, -1);
 	categoryText = "category=[" + categoryText + "],";
+	
+	var promptText = "prompt=\"" + 
+		document.getElementById("prompt").value + 
+		"\",";
 	
 	var randomText = "";
 	if (!document.getElementById("random-true").checked) {

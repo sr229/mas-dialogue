@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.ayn {
+    color: black !important;
+    text-align: center;
+}
+
+.butan {
+    margin-left: 10px;
+}
+
+.hero {
+    padding-bottom: 1.5em;
+}
+
+.panel {
+    margin: 2em 2em;
+}

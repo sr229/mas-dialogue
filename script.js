@@ -34,8 +34,8 @@ function process()
 		"\",";
 	
 	var randomText = "";
-	if (!document.getElementById("random-true").checked) {
-		var randomText = "random=False,";
+	if (document.getElementById("random-true").checked) {
+		var randomText = "random=True,";
 	}
 	
 	var poolText = "";

@@ -1,8 +1,6 @@
 body {
     display: flex;
     flex-direction: column;
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
 }
 
 .ayn {

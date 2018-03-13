@@ -1,8 +1,8 @@
 body {
     display: flex;
     flex-direction: column;
-    margin-left: 1em !important;
-    margin-right: 1em !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
 }
 
 .ayn {
@@ -11,13 +11,13 @@ body {
 }
 
 .butan {
-    margin-left: 10px;
+    margin-left: 0.7rem;
 }
 
 .hero {
-    padding-bottom: 1.5em;
+    padding-bottom: 1.5rem;
 }
 
 .panel {
-    margin: 2em 2em;
+    margin: 2rem 2rem;
 }

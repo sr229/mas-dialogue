@@ -1,27 +1,17 @@
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: MAS Dialogue Wizard
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://fumiko.maidcafe.me" # the base hostname & protocol for your site, e.g. http://example.com
+# Name of your blog (this will show up at the top of your page and in the RSS feed)
+name: MAS Dialogue Generator
+
+# Short description (goes below the title; it will also be used in the RSS feed)
+description: A Basic dialogue generator for Monika After Story.
+
+# Your name, as you want it to appear underneath each post and in the footer
+author: vermicellibug
+
 source: /
 
-# Build settings
-markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Exclude metadata and development time dependencies (like Grunt plugins)
+exclude: [README.md, LICENSE, DISCLAIMER.md]

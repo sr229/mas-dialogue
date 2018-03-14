@@ -7,8 +7,6 @@ description: A Basic dialogue generator for Monika After Story.
 # Your name, as you want it to appear underneath each post and in the footer
 author: vermicellibug
 
-source: /
-
 kramdown:
   # Use GitHub flavored markdown, including triple backtick fenced code blocks
   input: GFM

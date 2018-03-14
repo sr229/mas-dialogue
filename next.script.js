@@ -14,7 +14,7 @@ function htmlToEl(html) {
 }
 
 function clean(str, space) {
-	str = str.replace(/[^\w\s]|_/g, "")
+	str = str.replace(/[^\w\s]|_/g, "");
 	str = space ? str : str.replace(/ /g, "_");
 	return str.toLowerCase();
 }
@@ -23,7 +23,7 @@ function addCategory() {
 	let dropper = htmlToEl('<div class="control pad-bottom"><span class="select"><select></select></span></div>'); // Create bare. dropdown element tree.
 	let select = dropper.firstChild.firstChild; // Get a reference to the `<select>` element.
 
-	dropper.appendChild(htmlToEl('<button class="button is-danger"><span class="icon is-small"><i class="fas fa-times"></i></span></button>')); // Add the remove button to the tree.
+	dropper.appendChild(htmlToEl('<button class="button is-danger" style="margin-left: 0.2em !important;"><span class="icon is-small"><i class="fas fa-times"></i></span></button>')); // Add the remove button to the tree.
 	categories.forEach(el => {
 		let cat = document.createElement('option');
 		cat.innerHTML = el;

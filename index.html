@@ -1,62 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>MAS Dialogue Wizard</title>
-<link rel="stylesheet" href="styles.css" type="text/css">
-<script src="script.js"></script>
+    <meta charset="UTF-8">
+    <title>MAS Dialogue Wizard</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="script.js"></script>
 </head>
+
 <body>
-<nav style="background-color:#c9510c !important; z-index: 3 !important;">
-<p align="center"><a href="/next.index.html">Try the new version of this site!</a></p>
-</nav>
-<h1>Basic MAS Dialogue Wizard</h1>
-<p>
-<em>
+    <nav style="background-color:#c9510c !important; z-index: 3 !important;">
+        <p align="center"><a href="/next.index.html">Try the new version of this site!</a></p>
+    </nav>
+    <h1>Basic MAS Dialogue Wizard</h1>
+    <p>
+        <em>
 Each section is required. <br />
 When finished, check it over, sign into GitHub, and refer to the instructions
 <a href="https://github.com/Monika-After-Story/MonikaModDev/blob/master/CONTRIBUTING.md#best-practices">
 here
 </a>
 </em>
-</p>
-<div>
-<label for="label">Event Label (A short identifier for your dialogue): </label>
-<input type="text" id="label" placeholder="Ribbons">
-</div>
-<div>
-<label for="prompt">Prompt: </label>
-<input type="text" id="prompt" placeholder="Do you like ribbons?">
-</div>
-<div>
-<label for="category">Category: </label>
-<table id="category-table">
-</table>
-<button onclick="addCategory()">Add category</button>
-</div>
-<div>
-<label for="special">Special Dialogue Options:</label>
-<div>
-<input type="radio" id="special-random" name="special" />
-<label for="special-random">Random (Should this topic appear randomly when the player idles?)</label>
-<br />
-<input type="radio" id="special-pool" name="special" />
-<label for="special-pool">Pool (Should this topic appear in "Ask a Question"?)</label>
-<br />
-<input type="radio" id="special-none" name="special" checked />
-<label for="special-none">None</label>
-</div>
-<div>
-<label for="dialogue">Dialogue (What Monika will say to the player): </label>
-<table id="dialogue-table">
-</table>
-<button onclick="addDialogue()">Add dialogue line</button>
-</div>
-<div>
-<button onclick="process()">Generate Dialogue</button>
-</div>
-<div>
-<textarea id="formatted-text" readonly="true"></textarea>
-</div>
+    </p>
+    <div>
+        <label for="label">Event Label (A short identifier for your dialogue): </label>
+        <input type="text" id="label" placeholder="Ribbons">
+    </div>
+    <div>
+        <label for="prompt">Prompt: </label>
+        <input type="text" id="prompt" placeholder="Do you like ribbons?">
+    </div>
+    <div>
+        <label for="category">Category: </label>
+        <table id="category-table">
+        </table>
+        <button onclick="addCategory()">Add category</button>
+    </div>
+    <div>
+        <label for="special">Special Dialogue Options:</label>
+        <div>
+            <input type="radio" id="special-random" name="special" />
+            <label for="special-random">Random (Should this topic appear randomly when the player idles?)</label>
+            <br />
+            <input type="radio" id="special-pool" name="special" />
+            <label for="special-pool">Pool (Should this topic appear in "Ask a Question"?)</label>
+            <br />
+            <input type="radio" id="special-none" name="special" checked />
+            <label for="special-none">None</label>
+        </div>
+        <div>
+            <label for="dialogue">Dialogue (What Monika will say to the player): </label>
+            <table id="dialogue-table">
+            </table>
+            <button onclick="addDialogue()">Add dialogue line</button>
+        </div>
+        <div>
+            <button onclick="process()">Generate Dialogue</button>
+        </div>
+        <div>
+            <textarea id="formatted-text" readonly="true"></textarea>
+        </div>
 </body>
+
 </html>

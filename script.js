@@ -34,12 +34,12 @@ function process()
 		"\",";
 	
 	var randomText = "";
-	if (document.getElementById("random-true").checked) {
+	if (document.getElementById("special-random").checked) {
 		var randomText = "random=True,";
 	}
 	
 	var poolText = "";
-	if (document.getElementById("pool-true").checked) {
+	if (document.getElementById("special-pool").checked) {
 		var poolText = "pool=True,";
 	} 
 	

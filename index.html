@@ -32,23 +32,17 @@
 	  <button onclick="addCategory()">Add category</button>
 	</div>
 	<div>
-	  <label for="random">Random (Should this topic appear randomly when the player idles?"): </label>
+	  <label for="special">Special Dialogue Options:</label>
 	  <div>
-		<input type="radio" id="random-true" name="random" value="true" />
-		<label for="random-true">True</label>
-		<input type="radio" id="random-false" name="random" value="false" checked="checked" />
-		<label for="random-false">False</label>
+		<input type="radio" id="special-random" name="special" />
+		<label for="special-random">Random (Should this topic appear randomly when the player idles?)</label>
+		<br />
+		<input type="radio" id="special-pool" name="special" />
+		<label for="special-pool">Pool (Should this topic appear in "Ask a Question"?)</label>
+		<br />
+		<input type="radio" id="special-none" name="special" checked/>
+		<label for="special-none">None</label>
 	  </div>
-	</div>
-	<div>
-	  <label for="pool">Pool (Should this topic appear in "Ask a Question?"): </label>
-	  <div>
-		<input type="radio" id="pool-true" name="pool" value="true" />
-		<label for="pool-true">True</label>
-		<input type="radio" id="pool-false" name="pool" value="false" checked="checked" />
-		<label for="pool-false">False</label>
-	  </div>
-	</div>
 	<div>
 	  <label for="dialogue">Dialogue (What Monika will say to the player): </label>
 		<table id="dialogue-table">

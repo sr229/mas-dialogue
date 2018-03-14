@@ -17,5 +17,6 @@ body {
 }
 
 .panel {
-    margin: 2rem 2rem;
+    margin: 3rem 3rem;
+     box-shadow: 1px 1px 5px #888888;
 }

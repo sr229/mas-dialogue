@@ -1,121 +1,106 @@
-<!--
-
-  Copyright 2018 (c) vermiceliibug
-  
-  Licensed under MIT. You should have recieved a opy of the license along with the source.
-
-  Hey! Monika here~! Having fun browsing the source? Then you might as well contribute back to this site if you find it helpful!
--->
 
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="next.index.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
-    <meta property="og:title" content="MAS Dialogue Wizard">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sr229.github.io/mas-dialgoue">
-    <meta property="og:description" content="A simple wizard to make your own dialogue in Monika After Story.">
-    <meta property="org:site_name" content="MAS Dialogue Wizard">
-    <title>MAS Dialogue Wizard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="next.index.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+<meta property="og:title" content="MAS Dialogue Wizard">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sr229.github.io/mas-dialgoue">
+<meta property="og:description" content="A simple wizard to make your own dialogue in Monika After Story.">
+<meta property="org:site_name" content="MAS Dialogue Wizard">
+<title>MAS Dialogue Wizard</title>
 </head>
-
 <body>
-    <div class="notification is-warning ayn">
-        You are viewing the next version of the web wizard. <a class="button is-success butan" href="index.html">Switch back to Legacy</a>
-    </div>
-    <div class="hero">
-        <h2 class="title is-2" align="center">Basic MAS Dialogue Wizard</h2>
-        <h4 class="subtitle" align="center">A basic web version of the topic creation wizard for Monika After Story.</h4>
-    </div>
-    <nav class="panel">
-        <p class="panel-heading">Generate Dialogue</p>
-        <div class="panel-block">
-            <div class="field">
-                <label class="label">Event Label</label>
-                <div class="control">
-                    <input type="text" class="input" placeholder="Roses">
-                </div>
-                <p class="help">A short identifier for your dialogue.</p>
-                <br>
-                <br>
-                <label class="label">Prompt</label>
-                <div class="control">
-                    <input type="text" class="input" placeholder="Do you like jazz?">
-                </div>
-                <p class="help">How you want your dialogue to be triggered.</p>
-                <br>
-                <br>
-
-                <label class="label">Category</label>
-                <div id="categories"></div>
-                <button class="button is-primary" onclick="addCategory()">Add Category</button>
-
-                <br>
-                <br>
-                <label class="label">Special Dialogue Options</label>
-                <div class="control">
-                    <span class="radio">
-                     <input type="radio" id="random" value="random">
-                     <label for="random">Randomized <p class="help">Dialogue appears when player idles.</p></label>
-                     <br>
-                     <input type="radio" id="pool" value="pool">
-                    <label for="pool">Pool <p class="help">Appears only in "Ask a Question".</p></label>
-                     <br>
-                     <input selected type="radio" id="none" value="null">
-                     <label for="none">None. <p class="help">We have no absolute idea how this works but we'll add it anyway.</p></label>
-                    </span>
-                    <br>
-                    <br>
-                    <label class="label">Dialogue</label>
-                    <p class="help" style="padding-bottom: 0.3em;">What will Monika say to the player.</p>
-                    <div class="control">
-                        <input type="text" class="input" placeholder="Hi, Monika here!">
-                    </div>
-                    <br>
-                    <div class="control">
-                        <button class="button is-primary">Add More Dialogue</button>
-                        <button class="button is-success"><span class="icon is-small"><i class="fas fa-user-circle"></i></span></button>
-                        <button class="button is-danger">
-                         <span class="icon is-small">
-                           <i class="fas fa-times"></i>
-                        </span>
-                      </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="panel-block">
-            <button class="button is-success is-fullwidth"><span class="icon is-small"><i class="fas fa-bullhorn"></i></span> <span>Generate Dialogue</span></button>
-        </div>
-    </nav>
-    <footer class="footer">
-        <div class="container">
-            <div class="content">
-                <p align="center">
-                    Created for <a href="https://monikaafterstory.com">Monika After Story</a>.
-                    <br>
-                    <br> Created by <a href="https://github.com/vermicellibug">vermicellibug</a>.
-                    <br> Redesign by <a href="https://github.com/sr229">Ayane Satomi</a> and JavaScript refactor by <a href="https://github.com/Ovyerus">Ovyerus</a>.
-                    <br> Uses <a href="https://bulma.io">Bulma CSS</a> by <a href="https://jgthms.com/"> Jeremy Thomas</a> and <a href="https://fontawesome.com">FontAwesome</a>.
-                    <br>
-                    <br>
-                    <br>
-                    <span class="icons is-small">
-                        <a href="https://github.com/vermicellibug/mas-dialogue"><i class="fab fa-github"></i></a>
-                    </span>
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="next.script.js"></script>    
+<div class="notification is-warning ayn">
+You are viewing the next version of the web wizard. <a class="button is-success butan" href="index.html">Switch back to Legacy</a>
+</div>
+<div class="hero">
+<h2 class="title is-2" align="center">Basic MAS Dialogue Wizard</h2>
+<h4 class="subtitle" align="center">A basic web version of the topic creation wizard for Monika After Story.</h4>
+</div>
+<nav class="panel">
+<p class="panel-heading">Generate Dialogue</p>
+<div class="panel-block">
+<div class="field">
+<label class="label">Event Label</label>
+<div class="control">
+<input type="text" class="input" placeholder="Roses">
+</div>
+<p class="help">A short identifier for your dialogue.</p>
+<br>
+<br>
+<label class="label">Prompt</label>
+<div class="control">
+<input type="text" class="input" placeholder="Do you like jazz?">
+</div>
+<p class="help">How you want your dialogue to be triggered.</p>
+<br>
+<br>
+<label class="label">Category</label>
+<div id="categories"></div>
+<button class="button is-primary" onclick="addCategory()">Add Category</button>
+<br>
+<br>
+<label class="label">Special Dialogue Options</label>
+<div class="control">
+<span class="radio">
+<input type="radio" id="random" value="random">
+<label for="random">Randomized <p class="help">Dialogue appears when player idles.</p></label>
+<br>
+<input type="radio" id="pool" value="pool">
+<label for="pool">Pool <p class="help">Appears only in "Ask a Question".</p></label>
+<br>
+<input selected type="radio" id="none" value="null">
+<label for="none">None <p class="help">We have no absolute idea how this works but we'll add it anyway.</p></label>
+</span>
+<br>
+<br>
+<label class="label">Dialogue</label>
+<p class="help" style="padding-bottom: 0.3em;">What will Monika say to the player.</p>
+<div class="control">
+<input type="text" class="input" placeholder="Hi, Monika here!">
+</div>
+<br>
+<div class="control">
+<button class="button is-primary">Add More Dialogue</button>
+<button class="button is-success"><span class="icon is-small"><i class="fas fa-user-circle"></i></span></button>
+<button class="button is-danger">
+<span class="icon is-small">
+<i class="fas fa-times"></i>
+</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="panel-block">
+<button class="button is-success is-fullwidth"><span class="icon is-small"><i class="fas fa-bullhorn"></i></span> <span>Generate Dialogue</span></button>
+</div>
+</nav>
+<footer class="footer">
+<div class="container">
+<div class="content">
+<p align="center">
+Created for <a href="https://monikaafterstory.com">Monika After Story</a>.
+<br>
+<br> Created by <a href="https://github.com/vermicellibug">vermicellibug</a>.
+<br> Redesign by <a href="https://github.com/sr229">Ayane Satomi</a> and JavaScript refactor by <a href="https://github.com/Ovyerus">Ovyerus</a>.
+<br> Uses <a href="https://bulma.io">Bulma CSS</a> by <a href="https://jgthms.com/"> Jeremy Thomas</a> and <a href="https://fontawesome.com">FontAwesome</a>.
+<br>
+<br>
+<br>
+<span class="icons is-small">
+<a href="https://github.com/vermicellibug/mas-dialogue"><i class="fab fa-github"></i></a>
+</span>
+</p>
+</div>
+</div>
+</footer>
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<script src="next.script.js"></script>
 </body>
-
 </html>

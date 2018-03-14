@@ -25,8 +25,6 @@
 </head>
 
 <body>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-
     <div class="notification is-warning ayn">
         You are viewing the next version of the web wizard. <a class="button is-success butan" href="index.html">Switch back to Legacy</a>
     </div>
@@ -53,17 +51,11 @@
                 <p class="help">How you want your dialogue to be triggered.</p>
                 <br>
                 <br>
+
                 <label class="label">Category</label>
-                <div class="control">
-                    <span class="select">
-                     <select>
-                     <option selected>Lorem Ipsum</option>
-                     <option>Lorem Ipsum</option>
-                     <option>Lorem Ipsum</option>
-                  </select>
-                  </span>
-                    <button class="button is-primary"> Add Another Category</button> <button class="button is-danger"> <span class="icon is-small"><i class="fas fa-times"></i></span></button>
-                </div>
+                <div id="categories"></div>
+                <button class="button is-primary" onclick="addCategory()">Add Category</button>
+
                 <br>
                 <br>
                 <label class="label">Special Dialogue Options</label>
@@ -98,6 +90,7 @@
                 </div>
             </div>
         </div>
+
         <div class="panel-block">
             <button class="button is-success is-fullwidth"><span class="icon is-small"><i class="fas fa-bullhorn"></i></span> <span>Generate Dialogue</span></button>
         </div>
@@ -115,12 +108,15 @@
                     <br>
                     <br>
                     <span class="icons is-small">
-                    <a href="https://github.com/vermicellibug/mas-dialogue"> <i class="fab fa-github"></i></a>
-                     </span>
+                        <a href="https://github.com/vermicellibug/mas-dialogue"><i class="fab fa-github"></i></a>
+                    </span>
                 </p>
             </div>
         </div>
     </footer>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="next.script.js"></script>    
 </body>
 
 </html>

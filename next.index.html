@@ -45,11 +45,13 @@
                 </div>
                 <p class="help">A short identifier for your dialogue.</p>
                 <br>
+                <br>
                 <label class="label">Prompt</label>
                 <div class="control">
                     <input type="text" class="input" placeholder="Do you like jazz?">
                 </div>
                 <p class="help">How you want your dialogue to be triggered.</p>
+                <br>
                 <br>
                 <label class="label">Category</label>
                 <div class="control">
@@ -63,18 +65,23 @@
                     <button class="button is-primary"> Add Another Category</button> <button class="button is-danger"> <span class="icon is-small"><i class="fas fa-times"></i></span></button>
                 </div>
                 <br>
-                <label class="label">Randomized</label>
+                <br>
+                <label class="label">Special Dialogue Options</label>
                 <div class="control">
                     <span class="radio">
-
-                <input type="radio" id="isRandom" value="true">
-<label for="isRandom">Yes</label>
-<input type="radio" id="notRandom" value="false">
-<label for="notRandom">No</label>
-</span>
-                    <p class="help">Whether this should trigger randomly.</p>
+                        <input type="radio" id="random" value="random">
+                        <label for="random">Randomized <p class="help">Dialogue appears when player idles.</p></label>
+                        <br>
+                        <input type="radio" id="pool" value="pool">
+                        <label for="pool">Pool <p class="help">Appears only in "Ask a Question".</p></label>
+                        <br>
+                        <input selected type="radio" id="none" value="null">
+                        <label for="none">None. <p class="help">We have no absolute idea how this works but we'll add it anyway.</p></label>
+                    </span>
+                    <br>
                     <br>
                     <label class="label">Dialogue</label>
+                    <p class="help" style="padding-bottom: 0.3em;">What will Monika say to the player.</p>
                     <div class="control">
                         <input type="text" class="input" placeholder="Hi, Monika here!">
                     </div>

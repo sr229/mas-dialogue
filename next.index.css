@@ -25,3 +25,23 @@ body {
     margin-bottom: 0.75rem;
     display: inline-block;
 }
+
+*[title]:hover::before {
+    content: attr(title);
+    position: absolute;
+    margin-top: -100px;
+    padding: 5px;
+    background: hsl(0, 0%, 21%);
+    border-radius: 5px;
+}
+
+*[title]:hover::after {
+    position: absolute;
+    margin-top: -61px;
+    width: 0;
+    border-top: 5px solid hsl(0, 0%, 21%);
+    border-top: 5px solid hsl(0, 0%, 21%);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: "";
+}

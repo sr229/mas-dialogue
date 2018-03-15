@@ -28,7 +28,7 @@ function clean(str, space) {
 
 function addCategory() {
 	let dropper = htmlToEl('<div class="field is-grouped pad-bottom"><div class="control"><span class="select"><select></select></span></div></div>'); // Create bare. dropdown element tree.
-	let deleteButton = htmlToEl('<div class="control"><button class="button is-danger"><span class="icon is-small"><i class="fas fa-times"></i></span></button></div>'); // Generate the delete button.
+	let deleteButton = htmlToEl('<div class="control"><button class="button is-danger" title="Remove dialogue"><span class="icon is-small"><i class="fas fa-times"></i></span></button></div>'); // Generate the delete button.
 	let select = dropper.firstChild.firstChild.firstChild; // Get a reference to the `<select>` element.
 
 	categories.forEach(el => {
@@ -47,9 +47,9 @@ function addCategory() {
 function addDialogue() {
 	// Generate base field, and generate buttons separately.
 	let field = htmlToEl('<div class="field is-grouped pad-bottom"><span class="control is-expanded"><input type="text" class="input" placeholder="An example line of dialogue."></span></div>');
-	let poseButton = htmlToEl('<span class="control"><button class="button is-primary">Pose</button></span>');
-	let faceButton = htmlToEl('<span class="control"><button class="button is-primary">Face</button></span>');
-	let deleteButton = htmlToEl('<span class="control"><button class="button is-danger"><span class="icon"><i class="fas fa-times"></i></span></button></span>');
+	let poseButton = htmlToEl('<span class="control"><button class="button is-primary" title="Pose"><span class="icon is-small"><i class="fas fa-child"></i></span></button></span>');
+	let faceButton = htmlToEl('<span class="control"><button class="button is-primary" title="Face"><span class="icon is-small"><i class="fas fa-smile"></i></span></button></span>');
+	let deleteButton = htmlToEl('<span class="control"><button class="button is-danger" title="Remove dialogue"><span class="icon"><i class="fas fa-times"></i></span></button></span>');
 
 	// poseButton.setAttribute('onclick', 'selectPose(this)');
 	// faceButton.setAttribute('onclick', 'selectFace(this)');

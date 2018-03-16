@@ -26,18 +26,18 @@ body {
     display: inline-block;
 }
 
-*[title]:hover::before {
+[title]:hover::before {
     content: attr(title);
     position: absolute;
-    margin-top: -100px;
+    top: -50px;
     padding: 5px;
     background: hsl(0, 0%, 21%);
     border-radius: 5px;
 }
 
-*[title]:hover::after {
+[title]:hover::after {
     position: absolute;
-    margin-top: -61px;
+    top: -16px;
     width: 0;
     border-top: 5px solid hsl(0, 0%, 21%);
     border-top: 5px solid hsl(0, 0%, 21%);

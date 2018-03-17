@@ -5,6 +5,8 @@ const categories = [
 	'Trivia', 'Writing', 'You'
 ];
 
+document.getElementById('image-deselect').setAttribute('onclick', 'closeSelectors()');
+
 /**
  * Converts a HTML string into an element.
  * 
@@ -51,21 +53,67 @@ function addDialogue() {
 	let faceButton = htmlToEl('<span class="control"><button class="button is-primary" title="Face"><span class="icon is-small"><i class="fas fa-smile"></i></span></button></span>');
 	let deleteButton = htmlToEl('<span class="control"><button class="button is-danger" title="Remove dialogue"><span class="icon"><i class="fas fa-times"></i></span></button></span>');
 
-	// poseButton.setAttribute('onclick', 'selectPose(this)');
-	// faceButton.setAttribute('onclick', 'selectFace(this)');
+	let faceSelect = createSelector('face', 18, 'selected-face');
+	let poseSelect = createSelector('pose', 5, 'selected-pose');
+
+	// Add click events for opeening image selectors, and create the selectors.
+	poseButton.setAttribute('onclick', 'openSelector(this)');
+	poseButton.appendChild(poseSelect);
+
+	faceButton.setAttribute('onclick', 'openSelector(this)');
+	faceButton.appendChild(faceSelect);
+
 	deleteButton.setAttribute('onclick', 'removeEl(this, "dialogue")');
 
+	// Append buttons to field, and then add the field to the page.
 	field.appendChild(poseButton);
 	field.appendChild(faceButton);
 	field.appendChild(deleteButton);
+
 	document.getElementById('dialogue').appendChild(field);
+
+	// Select initial values.
+	selectItem(faceSelect.firstChild, 'selected-face');
+	selectItem(poseSelect.firstChild, 'selected-pose');
+}
+
+function createSelector(imgStart, range, attr) {
+	// Create initial container.
+	let selector = htmlToEl('<div class="image-selector"></div>');
+
+	// Generate images and add to container.
+	for (let i = 0; i < range; i++) {
+		let n = i.toString().length === 1 ? `0${1}` : i;
+		let img = htmlToEl(`<img src="assets/${imgStart}${n}.png">`);
+
+		img.setAttribute('onclick', `selectItem(this, "${attr}")`);
+		img.setAttribute('num', i.toString());
+		selector.appendChild(img);
+	}
+
+	return selector;
+}
+
+function selectItem(el, attr) {
+	el.parentElement.childNodes.forEach(e => e.classList.remove('highlighted'));
+	el.classList.add('highlighted');
+	el.parentElement.parentElement.parentElement.setAttribute(attr, el.getAttribute('num'));
+}
+
+function openSelector(el) {
+	let children = Array.from(el.childNodes).filter(el => el.classList.contains('image-selector'));
+
+	if (!children.length) return;
+
+	children[0].classList.add('open');
+	document.getElementById('image-deselect').classList.add('open');
+}
+
+function closeSelectors() {
+	document.querySelectorAll('.image-selector.open').forEach(el => el.classList.remove('open'));
+	document.getElementById('image-deselect').classList.remove('open');
 }
 
 function removeEl(el, container) {
 	document.getElementById(container).removeChild(el.parentElement);
 }
-
-function selectPose(el) {}
-function selectFace(el) {}
-
-// https://stackoverflow.com/questions/4941004/putting-images-with-options-in-a-dropdown-list

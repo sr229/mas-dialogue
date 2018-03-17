@@ -45,3 +45,45 @@ body {
     border-left: 5px solid transparent;
     content: "";
 }
+
+.image-selector {
+    background: hsl(0, 0%, 21%);
+    position: absolute;
+    display: none;
+    grid-gap: 10px 10px;
+    width: 500px;
+    z-index: 9999;
+    padding: 10px;
+    border-radius: 2px;
+    max-height: 300px;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow-y: auto;
+    margin-top: 0.75rem;
+}
+
+.image-selector.open {
+    display: grid;
+}
+
+.image-selector img {
+    border-radius: 2px;
+    width: 100%;
+    cursor: pointer;
+}
+
+img.highlighted {
+    border: solid 5px hsl(171, 100%, 41%);
+}
+
+#image-deselect {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    position: fixed;
+    display: none;
+    z-index: 9998;
+}
+
+#image-deselect.open {
+    display: block
+}

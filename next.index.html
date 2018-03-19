@@ -3,8 +3,9 @@
 
 <head>
     <title>MAS Dialogue Wizard</title>
-    <link href="next.index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="style/next.style.css">
+    <link rel="stylesheet" href="style/prism.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +19,8 @@
 </head>
 
 <body>
+    <div id="image-deselect" onclick="closeSelectors()"></div>
+
     <noscript>
         <div class="notification is-danger ayn level">
             <div class="level-item is-uppercase">
@@ -44,54 +47,89 @@
 
     <div class="panel">
         <p class="panel-heading">Generate Dialogue</p>
+
         <div class="panel-block">
             <div class="field">
-                <label class="label">Event Label</label>
-                <div class="control">
-                    <input type="text" class="input" placeholder="Roses">
+                <div class="field">
+                    <label class="label">Event Label</label>
+                    <div class="control">
+                        <input type="text" class="input" placeholder="Roses" id="diag-label">
+                    </div>
+                    <p class="help">A short identifier for the dialogue.</p>
+                    <p class="help is-danger hidden" id="label-error">Event label is required.</p>
                 </div>
-                <p class="help">A short identifier for your dialogue.</p>
-                <br>
-                <label class="label">Prompt</label>
-                <div class="control">
-                    <input type="text" class="input" placeholder="Do you like jazz?">
+
+                <div class="field-separator"></div>            
+
+                <div class="field">
+                    <label class="label">Prompt</label>
+                    <div class="control">
+                        <input type="text" class="input" placeholder="Do you like roses?" id="diag-prompt">
+                    </div>
+                    <p class="help">How you want your dialogue to be triggered.</p>
+                    <p class="help is-danger hidden" id="prompt-error">Event prompt text is required.</p>
                 </div>
-                <p class="help">How you want your dialogue to be triggered.</p>
-                <br>
-                <label class="label">Category</label>
-                <div id="categories"></div>
-                <button class="button is-success" onclick="addCategory()">Add Category</button>
-                <br>
-                <br>
-                <label class="label">Special Dialogue Options</label>
-                <div class="control">
-                    <span class="radio">
-                        <input type="radio" id="random" value="random">
-                        <label for="random">Randomized
-                            <p class="help">Dialogue appears when player idles.</p>
+
+                <div class="field-separator"></div>            
+
+                <div class="field">
+                    <label class="label">Category</label>
+                    <p class="small-label pad-bottom">Categories which the dialogue should be under.</p>
+
+                    <div id="categories"></div>
+                    <div class="control">
+                        <button class="button is-success" onclick="addCategory()">Add Category</button>
+                        <p class="help is-danger hidden" id="categories-error">You must have at least 1 category.</p>
+                    </div>
+                </div>
+
+                <div class="field-separator"></div>
+
+                <div class="field">
+                    <label class="label">Special Dialogue Options</label>
+                    <div class="control">
+                        <label class="radio">
+                            <input type="radio" name="diag-options" value="random">
+                            Random
+                            <p class="help">Dialogue appears when the player idles.</p>
                         </label>
-                        <br>
-                        <input type="radio" id="pool" value="pool">
-                        <label for="pool">Pool
-                            <p class="help">Appears only in "Ask a Question".</p>
+
+                        <div class="pad-bottom"></div>
+
+                        <label class="radio">
+                            <input type="radio" name="diag-options" value="pool">
+                            Pool
+                            <p class="help">Only appears in "Ask a Question".</p>
                         </label>
-                        <br>
-                        <input selected type="radio" id="none" value="null">
-                        <label for="none">None
-                            <p class="help">We have no absolute idea how this works but we'll add it anyway.</p>
+
+                        <div class="pad-bottom"></div>
+
+                        <label class="radio">
+                            <input type="radio" name="diag-options" value="none" checked>
+                            None
+                            <p class="help">Nothing special is done.</p>
                         </label>
-                    </span>
-                    <br>
-                    <br>
+                    </div>
+                </div>
+
+                <div class="field-separator"></div>
+
+                <div class="field">
                     <label class="label">Dialogue</label>
-                    <p class="help" style="padding-bottom: 0.3em;">What will Monika say to the player.</p>
+                    <p class="small-label pad-bottom">What Monika will say to the player, including the various faces and poses.</p>
+
                     <div id="dialogue"></div>
-                    <button class="button is-success" onclick="addDialogue()">Add Dialogue Line</button>
+                    <div class="control">
+                        <button class="button is-success" onclick="addDialogue()">Add Dialogue Line</button>
+                        <p class="help is-danger hidden" id="dialogue-error">You must have at least 1 piece of dialog.</p>                    
+                        <p class="help is-danger hidden" id="dialogue-error-2">All, or some, of the dialogue lines do not have any text.</p>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="panel-block">
-            <button class="button is-success is-fullwidth">
+            <button class="button is-success is-fullwidth" onclick="checkValues()">
                 <span class="icon is-small">
                     <i class="fas fa-bullhorn"></i>
                 </span>
@@ -99,6 +137,21 @@
             </button>
         </div>
     </div>
+
+    <!--div class="panel" id="generated-code">
+        <p class="panel-heading">Output</p>
+
+        <div class="panel-block">
+            <pre id="code"><code class="language-renpy line-numbers">
+init 5 python:
+    addEvent(Event(persistent.event_database,eventlabel="monika_a",category=['advice','advice','advice'],prompt="a",random=True))
+                
+label monika_a:
+    m "a"
+    return
+            </code></pre>
+        </div>
+    </div-->
 
     <footer class="footer">
         <div class="container">
@@ -129,10 +182,9 @@
         </div>
     </footer>
 
-    <div id="image-deselect"></div>    
-
     <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="next.script.js"></script>
+    <script src="script/next.script.js"></script>
+    <script src="script/prism.js" data-manual></script>
 </body>
 
 </html>

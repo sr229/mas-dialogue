@@ -1,7 +1,4 @@
-body {
-    display: flex;
-    flex-direction: column;
-}
+
 
 .ayn {
     color: black !important;
@@ -18,19 +15,25 @@ body {
 
 .panel {
     margin: 3rem 3rem;
-     box-shadow: 1px 1px 20px #888888;
+    box-shadow: 1px 1px 20px #888888;
 }
 
 .pad-bottom {
-    margin-bottom: 0.75rem;
-    display: inline-block;
+    margin-bottom: 0.5rem;
+    display: inherit;
+}
+
+.field-separator {
+    height: 1px;
+    width: 100%;
+    margin: 0.75rem 0;
 }
 
 [title]:hover::before {
     content: attr(title);
     position: absolute;
     top: -50px;
-    padding: 5px;
+    padding: 5px 15px;
     background: hsl(0, 0%, 21%);
     border-radius: 5px;
 }
@@ -76,14 +79,49 @@ img.highlighted {
 }
 
 #image-deselect {
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background: rgba(0, 0, 0, 0.25);
     position: fixed;
     display: none;
-    z-index: 9998;
+    z-index: 9999;
 }
 
 #image-deselect.open {
-    display: block
+    display: block;
+}
+
+/*
+   Style resets for prism numbers and tags, because Bulma fucks with the classes for some reason ¯\_(ツ)_/¯ 
+*/
+.number {
+    padding: initial;
+    margin: initial;
+    min-width: initial;
+    border-radius: 0;
+    font-size: inherit;
+    display: inline;
+    background-color: transparent;
+}
+
+.tag {
+    display: inline;
+    padding: initial !important;
+    margin: initial !important;
+    line-height: inherit !important;
+    font-size: inherit !important;
+}
+
+.language-renpy {
+    width: 100%;
+}
+
+.small-label {
+    font-size: 0.85rem;
+    display: block;
+    margin-top: -0.5rem;
+}
+
+.hidden {
+    display: none !important;
 }

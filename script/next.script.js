@@ -190,7 +190,7 @@ function generateCode() {
 	categories = categories.map(v => `"${v}"`).join(', ');
 	let specialOption = document.querySelector('input[type="radio"][name="diag-options"]:checked').value;
 	let dialogue = Array.from(document.getElementById('dialogue').childNodes).map(c => [c.firstChild.firstChild.value, c.getAttribute('selected-face'), c.getAttribute('selected-pose')]); // Likewise here.
-	dialogue = dialogue.map(d => `    m ${Number(d[2]) + 1}${'abcdefghijklmnopqr'[d[1]]} ${d[0]}`).join('\n'); // Convert raw dialogue values into the proper string.
+	dialogue = dialogue.map(d => `    m ${Number(d[2]) + 1}${'abcdefghijklmnopqr'[d[1]]} "${d[0]}"`).join('\n'); // Convert raw dialogue values into the proper string.
 	specialOption = specialOption !== 'none' ? `, ${specialOption}=true` : '';
 
 	let code = codeTemplate.replace(/{{(label|categories|prompt|specialOption|label|dialogue)}}/g, (_, v) => {

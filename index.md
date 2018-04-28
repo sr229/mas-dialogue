@@ -1,3 +1,3 @@
 ---
-permalink: /next.index.html
+permalink: /index.html
 ---

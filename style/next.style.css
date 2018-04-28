@@ -10,12 +10,13 @@
 }
 
 .hero {
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.5rem !important;
+    padding-top: 2rem !important;
 }
 
 .panel {
     margin: 3rem 3rem;
-    box-shadow: 1px 1px 20px #888888;
+    box-shadow: 1px 1px 5px #888888;
 }
 
 .pad-bottom {
